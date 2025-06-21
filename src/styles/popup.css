@@ -1,0 +1,193 @@
+:root {
+  --popup-bg: #1a1a1a;
+  --text-color: #f0f0f0;
+  --status-bg: rgba(0, 0, 0, 0.7);
+}
+
+.popup {
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background-color: var(--popup-bg);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 0 0 50px rgba(0,0,0,0.7);
+  animation: flash 1s infinite alternate;
+  overflow: hidden;
+}
+
+.solved {
+  background-color: #4a148c;
+  color: #fffde7;
+  animation: none;
+}
+
+@keyframes flash {
+  from { opacity: 1; }
+  to { opacity: 0.5; }
+}
+
+/* Background pattern */
+.app-container {
+  position: relative;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(40,40,40,0.1) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(40,40,40,0.1) 0%, transparent 20%);
+}
+
+/* Welcome overlay */
+.welcome-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 2000;
+  animation: fadeOut 5s forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+.welcome-message {
+  font-size: 32px;
+  text-align: center;
+  color: #fff;
+  padding: 30px;
+  background: rgba(60, 60, 60, 0.9);
+  border-radius: 15px;
+  max-width: 80%;
+}
+
+/* Status bar */
+.status-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--status-bg);
+  color: #ccc;
+  font-size: 16px;
+  z-index: 100;
+}
+
+.test-button {
+  background: #333;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.test-button:hover {
+  background: #444;
+}
+
+.mantra-text {
+  text-align: center;
+  font-family: var(--day-font), serif;
+  color: var(--text-color);
+  padding: 20px;
+}
+
+.large-text {
+  font-size: 44pt;
+  margin-bottom: 30px;
+}
+
+.math-challenge {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.math-challenge input {
+  font-size: 22pt;
+  width: 120px;
+  margin: 0 10px;
+  padding: 10px;
+  background: #333;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
+
+.math-challenge button {
+  font-size: 18pt;
+  padding: 10px 20px;
+  background: #444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.thank-you-message {
+  text-align: center;
+  font-size: 22pt;
+  padding: 20px;
+  color: #fffde7;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .popup {
+    width: 95%;
+    left: 2.5%;
+  }
+  
+  .large-text {
+    font-size: 36pt;
+  }
+  
+  .math-challenge input {
+    font-size: 18pt;
+    width: 100px;
+  }
+  
+  .status-bar {
+    font-size: 14px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .large-text {
+    font-size: 28pt;
+  }
+  
+  .math-challenge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .math-challenge input {
+    margin: 10px 0;
+    width: 80%;
+  }
+  
+  .welcome-message {
+    font-size: 24px;
+  }
+}
