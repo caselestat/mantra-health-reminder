@@ -34,5 +34,8 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,ico,png,svg,ttf,woff,woff2}']
       }
     })
-  ]
+  ],
+  build: {
+    assetsDir: './' // This will put assets in root of dist directory
+  }
 })
