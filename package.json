@@ -2,10 +2,11 @@
   "name": "mantra-app",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://caselestat.github.io/mantra-health-reminder",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build --base=./",
     "preview": "vite preview"
   },
   "devDependencies": {
